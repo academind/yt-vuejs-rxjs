@@ -19,9 +19,7 @@
     created () {
       const obs = Observable.interval(1000)
       obs
-        .filter((value) => {
-          return value % 2 == 0
-        })
+        .filter((value) => value % 2 == 0)
         .subscribe(
         (value) => this.count = value
       )
