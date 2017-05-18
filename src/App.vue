@@ -11,18 +11,11 @@
 
   export default {
     name: 'app',
-    data () {
+    subscriptions () {
       return {
-        count: 0
+        count: Observable.interval(1000)
+          .filter((value) => value % 2 == 0)
       }
-    },
-    created () {
-      const obs = Observable.interval(1000)
-      obs
-        .filter((value) => value % 2 == 0)
-        .subscribe(
-        (value) => this.count = value
-      )
     }
   }
 </script>
